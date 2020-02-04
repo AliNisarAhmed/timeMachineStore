@@ -1,0 +1,30 @@
+	Fri Jan 31 20:12 2020 Time and Allocation Profiling Report  (Final)
+
+	   timeMachineStore-exe.EXE +RTS -N -p -RTS
+
+	total time  =        0.00 secs   (0 ticks @ 1000 us, 8 processors)
+	total alloc =      47,976 bytes  (excludes profiling overheads)
+
+COST CENTRE   MODULE           SRC                 %time %alloc
+
+MAIN          MAIN             <built-in>            0.0    4.4
+CAF:someFunc1 Lib              <no location info>    0.0    1.2
+someFunc      Lib              src\Lib.hs:9:1-30     0.0   20.7
+CAF           GHC.IO.Handle.FD <entire-module>       0.0   72.5
+
+
+                                                                              individual      inherited
+COST CENTRE    MODULE                   SRC                no.     entries  %time %alloc   %time %alloc
+
+MAIN           MAIN                     <built-in>         251          0    0.0    4.4     0.0  100.0
+ CAF           GHC.Conc.Windows         <entire-module>    470          0    0.0    0.4     0.0    0.4
+ CAF           GHC.IO.Handle.Text       <entire-module>    432          0    0.0    0.2     0.0    0.2
+ CAF           GHC.IO.Handle.FD         <entire-module>    430          0    0.0   72.5     0.0   72.5
+ CAF           GHC.IO.Encoding.CodePage <entire-module>    421          0    0.0    0.4     0.0    0.4
+ CAF           GHC.IO.Encoding          <entire-module>    420          0    0.0    0.2     0.0    0.2
+ CAF:main      Main                     app\Main.hs:6:1-4  258          0    0.0    0.0     0.0    0.0
+  main         Main                     app\Main.hs:6:1-15 502          1    0.0    0.0     0.0    0.0
+ CAF:someFunc  Lib                      src\Lib.hs:9:1-8   320          0    0.0    0.0     0.0    0.1
+  someFunc     Lib                      src\Lib.hs:9:1-30  503          1    0.0    0.1     0.0    0.1
+ CAF:someFunc1 Lib                      <no location info> 319          0    0.0    1.2     0.0    1.2
+ someFunc      Lib                      src\Lib.hs:9:1-30  505          0    0.0   20.6     0.0   20.6
